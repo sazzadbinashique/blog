@@ -15,6 +15,12 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
+
     public function index()
     {
 //        $user = DB::table('users')->where('admin', 1)->get();

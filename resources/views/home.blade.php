@@ -4,6 +4,7 @@
 
 {{--        <div class="col-md-8">--}}
             <div class="card">
+                @include('admin.includes.success')
                 <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
