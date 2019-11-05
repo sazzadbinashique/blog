@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
+    @yield('styles')
 </head>
 <body>
     <div id="app">
@@ -132,18 +133,20 @@
             </div>
         </div>
     </div>
-    @yield('js-refresh')
     <script src="{{asset('js/toastr.min.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    @yield('js-refresh')
     <script>
         @if(Session::has('success'))
-            toastr.success("{{Session::get('success')}}");
+        toastr.success("{{Session::get('success')}}");
         @endif
 
         @if(Session::has('info'))
         toastr.info("{{Session::get('info')}}");
         @endif
     </script>
-{{--    // not working please check it after ....--}}
+    {{--    // not working please check it after ....--}}
+    @yield('scripts')
 </body>
 
 </html>

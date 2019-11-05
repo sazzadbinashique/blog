@@ -122,6 +122,6 @@ class ProfilesController extends Controller
      */
     public function destroy(Profile $profile)
     {
-        //
+
     }
 }

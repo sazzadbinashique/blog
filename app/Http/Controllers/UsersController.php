@@ -109,7 +109,12 @@ class UsersController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->profile->delete();
+        $user->delete();
+
+        Session::flash('success', 'User Deleted Successfully');
+
+        return redirect()->back();
     }
 
     public function admin(User $user){

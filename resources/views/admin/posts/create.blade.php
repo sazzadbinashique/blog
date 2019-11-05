@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-
+@section('styles')
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+@stop
 @section('content')
 
    <div class="panel panel-default">
@@ -37,8 +39,8 @@
                    <input type="file" name="featured" class="form-control">
                </div>
                <div class="form-group">
-                   <label for="body">Body Content</label>
-                   <textarea name="body" id="body" cols="5" rows="5" class="form-control"></textarea>
+                   <label for="content">Body Content</label>
+                   <textarea name="body" id="content" cols="5" rows="5" class="form-control"></textarea>
                </div>
                <div class="form-group">
                    <div class="text-center">
@@ -47,10 +49,21 @@
                        </button>
                    </div>
                </div>
-
            </form>
        </div>
    </div>
 
 @endsection
+
+
+
+
+@section('scripts')
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#content').summernote();
+        });
+    </script>
+@stop
 

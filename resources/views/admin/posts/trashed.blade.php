@@ -29,7 +29,7 @@
                             <th scope="row">{{$post->id}}</th>
                             <td>{{$post->title}}</td>
                             <td><img src="{{ $post->featured}}" alt="{{$post->title}}" width="90px" height="50px"></td>
-                            <td>{{$post->category->name}}</td>
+                            <td>{{@$post->category->name}}</td>
                             <td>
                                 <a href="{{route('post.restore', $post->id)}}"><button type="button" class="btn btn-primary">Restore</button></a>
                             </td>
